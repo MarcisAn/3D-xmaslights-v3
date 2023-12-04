@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Light {
+  index Int @id @default(autoincrement())
+  x     Int
+  y     Int
+  z     Int
+}
+
+model Animation {
+  index         Int     @id @default(autoincrement())
+  name          String
+  display_name  String
+  colors        Color[]
+  default_speed Int
+}
+
+model Color {
+  index          Int        @id @default(autoincrement())
+  name           String
+  default        String
+  Animation      Animation? @relation(fields: [animationIndex], references: [index])
+  animationIndex Int?
+}

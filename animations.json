@@ -1,0 +1,34 @@
+[
+  {
+    "name": "flicker",
+    "f_name": "Mirk\u0161\u0137in\u0101\u0161an\u0101s",
+    "speed": 1,
+    "color_names": ["Kr\u0101sa 1", "Kr\u0101sa 2"],
+    "colors": ["0;0;0", "255;0;0"],
+    "params": []
+  },
+  {
+    "name": "climbing",
+    "f_name": "K\u0101p\u0161ana pa virteni",
+    "speed": 50,
+    "color_names": ["Kr\u0101sa 1", "Kr\u0101sa 2"],
+    "colors": ["255;0;0", "0;0;0"],
+    "params": []
+  },
+  {
+    "name": "axis",
+    "f_name": "K\u0101p\u0161ana pa as\u012bm",
+    "speed": 80,
+    "color_names": ["X ass", "Y ass", "Z ass"],
+    "colors": ["255;0;0", "0;255;0", "0;0;255"],
+    "params": []
+  },
+  {
+    "name": "expanding_spheres",
+    "f_name": "Paplašinātas lodes",
+    "speed": 30,
+    "color_names": ["lode 1", "lode 2", "lode 3"],
+    "colors": ["255;0;0", "255;255;0", "0;255;0"],
+    "params": []
+  }
+]
