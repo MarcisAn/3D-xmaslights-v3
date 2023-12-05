@@ -5,6 +5,7 @@
   import Parameterbox from "../../components/parameterbox.svelte";
   import { Button } from "$lib/components/ui/button";
   import animations from "../../../../animations.json";
+  import { dev } from "$app/enviroment";
 
   import * as Tabs from "$lib/components/ui/tabs";
 
@@ -20,7 +21,14 @@
 
   function update_on_server() {//palaist animāciju
     console.log("server", selection);
-    fetch("http://localhost:3000/requestanim", {
+    let server_url = "";
+    if (dev){
+      server_url = "http://localhost:3000"
+    }
+    else{
+      server_url = "https://lampinas-server.cvgmerch.lv";
+    }
+    fetch(server_url + "/requestanim", {
       method: "POST",
       body: JSON.stringify(selection),
       headers: new Headers({ "content-type": "application/json" }),

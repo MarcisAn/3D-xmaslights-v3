@@ -3,6 +3,13 @@ import "./style.css";
 import { io } from "socket.io-client";
 import { CanvasRecorder } from "./CanvasRecorder";
 
+let server_url = "";
+if (import.meta.env.PROD){
+  server_url = "wss://lampinas-server.cvgmerch.lv:443";
+}
+else{
+  server_url = "ws://localhost:81"
+}
 const socket = io("ws://localhost:81", {
   autoConnect: true,
   reconnection: true,
