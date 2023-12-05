@@ -5,7 +5,7 @@
   import Parameterbox from "../../components/parameterbox.svelte";
   import { Button } from "$lib/components/ui/button";
   import animations from "../../../../animations.json";
-  import { dev } from "$app/enviroment";
+  import { dev } from "$app/environment";
 
   import * as Tabs from "$lib/components/ui/tabs";
 

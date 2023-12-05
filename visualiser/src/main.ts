@@ -10,7 +10,7 @@ if (import.meta.env.PROD){
 else{
   server_url = "ws://localhost:81"
 }
-const socket = io("ws://localhost:81", {
+const socket = io(server_url, {
   autoConnect: true,
   reconnection: true,
   reconnectionAttempts: 1000,
