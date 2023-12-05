@@ -7,7 +7,7 @@ async function bootstrap() {
   origin: [
     'http://lampinas.vercel.app',
   ],
-  credentials: true,
+  credentials: false,
 });
   await app.listen(3000);
 }
