@@ -60,7 +60,7 @@
 
 <h1>Lampiņu kontrole</h1>
 <div class="vis-frame">
-  <iframe src="http://localhost:5174" frameborder="0" />
+  <iframe src={dev ? "http://localhost:5174" : "https://3-d-xmaslights-v3.vercel.app/"} frameborder="0" />
 </div>
 
 <Tabs.Root value="presets" class="w-full">
