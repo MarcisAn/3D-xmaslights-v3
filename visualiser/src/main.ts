@@ -1,14 +1,13 @@
 import { all_to_black, createScene, renderVis } from "./counter";
 import "./style.css";
 import { io } from "socket.io-client";
-import { CanvasRecorder } from "./CanvasRecorder";
+import { CanvasRecorder } from "./CanvasRecorder.ts";
 
 let server_url = "";
-if (import.meta.env.PROD){
-  server_url = "wss://lampinas-server.cvgmerch.lv:443";
-}
-else{
-  server_url = "ws://localhost:81"
+if (import.meta.env.PROD) {
+  server_url = "ws://lampinas-server.cvgmerch.lv:81";
+} else {
+  server_url = "ws://localhost:81";
 }
 const socket = io(server_url, {
   autoConnect: true,
@@ -32,7 +31,6 @@ socket.on("reciveAnimation", (data) => {
     recorder.start();
   }
   anim_speed = data.speed;
-  console.log(anim_speed)
   frame = 0;
   all_to_black();
   anim_data = [];
@@ -52,12 +50,9 @@ socket.on("reciveAnimation", (data) => {
     anim_data.push(tree_data);
   });
   intervalId = window.setInterval(function () {
-
     if (anim_data.length > 0) {
       renderVis(anim_data[frame]);
     }
-    console.log(anim_speed);
-    console.log(Math.pow(anim_speed, -1)*400)
     frame++;
 
     if (frame == anim_data.length) {
@@ -69,7 +64,7 @@ socket.on("reciveAnimation", (data) => {
       frame = 0;
     }
     //console.log(Math.pow(anim_speed, -1)*400)
-  }, Math.pow(anim_speed, -1)*400);
+  }, Math.pow(anim_speed, -1) * 400);
 });
 
 let html = ``;
