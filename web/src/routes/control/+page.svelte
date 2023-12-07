@@ -60,7 +60,7 @@
 
 <h1>Lampiņu kontrole</h1>
 <div class="vis-frame">
-  <iframe src={dev ? "http://localhost:5174" : "http://vis.cvgmerch.lv//"} frameborder="0" />
+  <iframe src={dev ? "http://localhost:5174" : "https://65721ce6c4d70a00acc5cbf7--dazzling-tartufo-37aa31.netlify.app/"} frameborder="0" />
 </div>
 
 <Tabs.Root value="presets" class="w-full">
