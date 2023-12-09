@@ -14,6 +14,7 @@ export class DBService {
     where: Prisma.LightWhereUniqueInput,
     data: Prisma.LightUpdateInput,
   ) {
+    console.log(data)
     return this.prisma.light.update({
       data,
       where,

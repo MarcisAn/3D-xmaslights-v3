@@ -27,6 +27,7 @@ export class AppService {
   }
 
   updateCords(cords: string, index) {
+    console.log(cords)
     const split = cords.split(',');
     this.db.updateCords(
       { index: Number(index + 1) },
