@@ -43,7 +43,7 @@ export class MessageGateway
   handleOrderCreatedEvent(payload: AnimationDelivered) {
     // handle and process "OrderCreatedEvent" event
     console.log('websocket emit');
-    console.log(payload);
+    //console.log(payload);
     this.wss.emit('reciveAnimation', {
       animation: payload.animationData,
       speed: payload.speed,
