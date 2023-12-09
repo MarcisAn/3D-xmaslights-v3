@@ -5,7 +5,7 @@ import { CanvasRecorder } from "./CanvasRecorder.ts";
 
 let server_url = "";
 if (import.meta.env.PROD) {
-  server_url = "ws://lampinas-server.cvgmerch.lv:81";
+  server_url = "wss://lampinas-server.cvgmerch.lv";
 } else {
   server_url = "ws://localhost:81";
 }
