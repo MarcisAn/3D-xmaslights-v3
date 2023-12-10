@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { DBService } from './db.service';
 import { firstValueFrom } from 'rxjs';
 import { EventEmitter2 } from '@nestjs/event-emitter';
+import {readFileSync} from "fs";
 
 export class NewCords {
   cords: string;
@@ -29,6 +30,15 @@ export class AppController {
       new AnimationDelivered(await animation, request.body.speed),
     );
     return '';
+  }
+
+  @Get('getAnimCache')
+  async getAnimCache(
+      @Req()
+      request: Request
+  ): Promise<string>{
+    const cache = readFileSync('./cache.json');
+    return cache.toString();
   }
 
   @Post('updateCords')
