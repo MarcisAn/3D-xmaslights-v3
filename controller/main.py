@@ -31,6 +31,10 @@ def on_message(data):
     global anim_frame_index
     anim_frame_index = 0
 
+    for i in range(0,199):
+        pixels[i] = (0,0,0)
+        pixels.show()
+
 def run_new_anim_from_cache():
     cache = requests.get("https://lampinas-server.cvgmerch.lv/getAnimCache")
     len_cache = len(cache.json())
@@ -43,6 +47,10 @@ def run_new_anim_from_cache():
     anim_frame_delay_time = math.pow(int(selected_anim['speed']), -1)
     global time_anim_started
     time_anim_started = time.time()
+
+    for i in range(0,199):
+        pixels[i] = (0,0,0)
+        pixels.show()
 
 
 sio.connect("wss://lampinas-server.cvgmerch.lv", transports=['websocket'])
@@ -65,9 +73,11 @@ while True:
         if loop_index % 4 == 0:
             loop_index = 1
             pixels[ord(light[0])] = (ord(light[1]), ord(light[2]),ord(light[3]))
+            #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
+        loop_index += 1
 
     pixels.show()
-    print(anim_frame_index,anim_frames[anim_frame_index])
+    #print(anim_frame_index,anim_frames[anim_frame_index])
     if anim_frame_index == len(anim_frames)-1:
         anim_frame_index = 0
     else:
