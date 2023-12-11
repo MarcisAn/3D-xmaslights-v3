@@ -25,10 +25,7 @@
 >
   <div class="gif">
     <!-- svelte-ignore a11y-media-has-caption -->
-    <video loop autoplay>
-      <source src={"/animation-previews/"+animation.name+".webm"} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <img src={"/animation-previews/"+animation.name+".gif"} alt="">
   </div>
   {animation.f_name}
 </div>
