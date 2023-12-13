@@ -59,7 +59,7 @@ def run_new_anim_from_cache():
             light = light + i
             if loop_index % 4 == 0:
                 loop_index = 1
-                anim_frames.append([ord(light[0]), ord(light[1], ord(light[2])), ord(light[3])])
+                anim_frames.append([ord(light[0]), ord(light[1]), ord(light[2]), ord(light[3])])
                 #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
             loop_index += 1
     global anim_frame_index
