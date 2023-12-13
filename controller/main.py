@@ -27,20 +27,41 @@ def on_message(data):
     global anim_frame_delay_time
     anim_frame_delay_time = math.pow(int(data['speed']), -1)
     global anim_frames
-    anim_frames = data['animation']
+    anim_frames = []
+    for frame in data['animation']:
+        light = ''
+            loop_index = 1
+            for i in frame:
+                light = light + i
+                if loop_index % 4 == 0:
+                    loop_index = 1
+                    anim_frames.append([ord(light[0]), ord(light[1], ord(light[2])), ord(light[3])])
+                    #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
+                loop_index += 1
     global anim_frame_index
     anim_frame_index = 0
 
     for i in range(0,199):
         pixels[i] = (0,0,0)
         pixels.show()
+        print(anim_frames)
 
 def run_new_anim_from_cache():
     cache = requests.get("https://lampinas-server.cvgmerch.lv/getAnimCache")
     len_cache = len(cache.json())
     selected_anim = cache.json()[random.randint(0, len_cache-1)]
     global anim_frames
-    anim_frames = selected_anim['data']
+    anim_frames = []
+    for frame in selected_anim['data']:
+        light = ''
+            loop_index = 1
+            for i in frame:
+                light = light + i
+                if loop_index % 4 == 0:
+                    loop_index = 1
+                    anim_frames.append([ord(light[0]), ord(light[1], ord(light[2])), ord(light[3])])
+                    #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
+                loop_index += 1
     global anim_frame_index
     anim_frame_index = 0
     global anim_frame_delay_time
@@ -65,16 +86,8 @@ while True:
         continue
 
     frame = anim_frames[anim_frame_index]
-
-    light = ''
-    loop_index = 1
-    for i in frame:
-        light = light + i
-        if loop_index % 4 == 0:
-            loop_index = 1
-            pixels[ord(light[0])] = (ord(light[1]), ord(light[2]),ord(light[3]))
-            #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
-        loop_index += 1
+    pixels[frame[0]] = (frame[1], frame[2], pixels[3])
+    
 
     pixels.show()
     #print(anim_frame_index,anim_frames[anim_frame_index])
