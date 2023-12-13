@@ -30,14 +30,14 @@ def on_message(data):
     anim_frames = []
     for frame in data['animation']:
         light = ''
-            loop_index = 1
-            for i in frame:
-                light = light + i
-                if loop_index % 4 == 0:
-                    loop_index = 1
-                    anim_frames.append([ord(light[0]), ord(light[1], ord(light[2])), ord(light[3])])
-                    #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
-                loop_index += 1
+        loop_index = 1
+        for i in frame:
+            light = light + i
+            if loop_index % 4 == 0:
+                loop_index = 1
+                anim_frames.append([ord(light[0]), ord(light[1], ord(light[2])), ord(light[3])])
+                #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
+            loop_index += 1
     global anim_frame_index
     anim_frame_index = 0
 
@@ -54,14 +54,14 @@ def run_new_anim_from_cache():
     anim_frames = []
     for frame in selected_anim['data']:
         light = ''
-            loop_index = 1
-            for i in frame:
-                light = light + i
-                if loop_index % 4 == 0:
-                    loop_index = 1
-                    anim_frames.append([ord(light[0]), ord(light[1], ord(light[2])), ord(light[3])])
-                    #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
-                loop_index += 1
+        loop_index = 1
+        for i in frame:
+            light = light + i
+            if loop_index % 4 == 0:
+                loop_index = 1
+                anim_frames.append([ord(light[0]), ord(light[1], ord(light[2])), ord(light[3])])
+                #print(ord(light[0]),ord(light[1]),ord(light[2]),ord(light[3]))
+            loop_index += 1
     global anim_frame_index
     anim_frame_index = 0
     global anim_frame_delay_time
