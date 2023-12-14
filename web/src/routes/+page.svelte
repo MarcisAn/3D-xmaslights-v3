@@ -1,1 +1,1 @@
-<h1>aa</h1>
+<a href="/control">KONTROLĒT LAMPIŅAS!</a>
