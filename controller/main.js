@@ -69,15 +69,12 @@ const colorArray = channel.array;
 function sendFrame(data){
     data.forEach((light) => {
       colorArray[light[0]] =
-        colorArray[light[0]] = parseInt(toHexString([data[1], data[2],data[3]]),16)
-        console.log(light)
+        colorArray[light[0]] = rgb2Int(ight[1], light[2], light[3]);
+        console.log(light, rgb2Int(ight[1], light[2], light[3]))
         //obj.changeColor(light[1], light[2], light[3]);
     });
     ws.render()
 }
-
-function toHexString(bytes) {
-  return Array.from(bytes, function(byte) {
-    return ('0' + (byte & 0xFF).toString(16))
-  }).join('')
+function rgb2Int(r, g, b) {
+  return ((r & 0xff) << 16) | ((g & 0xff) << 8) | (b & 0xff);
 }
