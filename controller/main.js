@@ -73,6 +73,7 @@ function sendFrame(data){
         console.log(light)
         //obj.changeColor(light[1], light[2], light[3]);
     });
+    ws.render()
 }
 
 function toHexString(bytes) {
