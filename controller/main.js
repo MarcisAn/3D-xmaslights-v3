@@ -1,5 +1,7 @@
 import { io } from "socket.io-client";
 import {SerialPort} from "serialport"
+import ws from "rpi-ws281x-native";
+const channel = ws(200);
 
 
 let server_url = "wss://lampinas-server.cvgmerch.lv";
@@ -62,11 +64,19 @@ socket.on("reciveAnimation", (data) => {
         //console.log(Math.pow(anim_speed, -1)*400)
     }, Math.pow(anim_speed, -1) * 400);
 });
+const colorArray = channel.array;
 
 function sendFrame(data){
     data.forEach((light) => {
-        let index = light[0];
+      colorArray[light[0]] =
+        colorArray[light[0]] = parseInt(toHexString([data[1], data[2],data[3]]),16)
         console.log(light)
         //obj.changeColor(light[1], light[2], light[3]);
     });
+}
+
+function toHexString(bytes) {
+  return Array.from(bytes, function(byte) {
+    return ('0' + (byte & 0xFF).toString(16))
+  }).join('')
 }
