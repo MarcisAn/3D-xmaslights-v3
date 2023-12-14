@@ -18,9 +18,9 @@ pub fn expanding_spheres(
     let ref lode2: String = colors[1];
     let ref lode3: String = colors[2];
 
-    for step in 0..80 {
+    for step in 0..200 {
         for i in 0..199 {
-            if distance_between_points_3d(50, 50, 40, cords[i].x, cords[i].y, cords[i].z)
+            if distance_between_points_3d(50, 50, 0, cords[i].x, cords[i].y, cords[i].z)
                 < step * step
             {
                 let color1 = get_color(lode1.to_string(), i, cords[i]);
@@ -31,9 +31,9 @@ pub fn expanding_spheres(
         }
         _builder.add_frame();
     }
-    for step in 0..80 {
+    for step in 0..200 {
         for i in 0..199 {
-            if distance_between_points_3d(50, 50, 40, cords[i].x, cords[i].y, cords[i].z)
+            if distance_between_points_3d(50, 50, 0, cords[i].x, cords[i].y, cords[i].z)
                 < step * step
             {
                 let color2 = get_color(lode2.to_string(), i, cords[i]);
@@ -42,9 +42,9 @@ pub fn expanding_spheres(
         }
         _builder.add_frame();
     }
-    for step in 0..80 {
+    for step in 0..200 {
         for i in 0..199 {
-            if distance_between_points_3d(50, 50, 40, cords[i].x, cords[i].y, cords[i].z)
+            if distance_between_points_3d(50, 50, 0, cords[i].x, cords[i].y, cords[i].z)
                 < step * step
             {
                 let color3 = get_color(lode3.to_string(), i, cords[i]);

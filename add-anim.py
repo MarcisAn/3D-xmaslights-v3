@@ -34,7 +34,7 @@ json_object = json.dumps(anim_file, indent=4)
  
 # Writing to sample.json
 with open("animations.json", "w", encoding="utf-8") as outfile:
-    outfile.write(json_object.encode('utf8'))
+    outfile.write(json_object)
 
 
 get_color = "    let ref {color_name}: String = colors[{color_index}];\n"
