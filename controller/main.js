@@ -1,5 +1,5 @@
 import { io } from "socket.io-client";
-import {SerialPort} from "serialport"
+//import {SerialPort} from "serialport"
 import ws from "rpi-ws281x-native";
 const channel = ws(200);
 
@@ -19,7 +19,7 @@ let recording = false;
 let frame = 0;
 let intervalId;
 
-const port = new SerialPort({ path: '/dev/tty-usbserial1', baudRate: 57600 })
+//const port = new SerialPort({ path: '/dev/tty-usbserial1', baudRate: 57600 })
 
 socket.on("reciveAnimation", (data) => {
     clearInterval(intervalId);
