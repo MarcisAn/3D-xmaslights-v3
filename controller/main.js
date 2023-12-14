@@ -69,8 +69,8 @@ const colorArray = channel.array;
 function sendFrame(data){
     data.forEach((light) => {
       colorArray[light[0]] =
-        colorArray[light[0]] = rgb2Int(ight[1], light[2], light[3]);
-        console.log(light, rgb2Int(ight[1], light[2], light[3]))
+        colorArray[light[0]] = rgb2Int(light[1], light[2], light[3]);
+        console.log(light, rgb2Int(light[1], light[2], light[3]))
         //obj.changeColor(light[1], light[2], light[3]);
     });
     ws.render()
