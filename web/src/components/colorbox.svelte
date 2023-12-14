@@ -137,18 +137,6 @@
         <li><strong>y</strong> - lampiņas y koordināta [0;100]</li>
         <li><strong>z</strong> - lampiņas z koordināta [0;100]</li>
       </ul>
-      Pieejamas šādas funkcijas:
-      <ul>
-        <li>
-          <strong>sin(x)</strong> - sīnusa funkcija, kas izvada vērtību [0;100].
-          Lai effekts būtu redzams, ieteicams funkcijas argumentu dalīt ar lielu
-          skaitli
-        </li>
-        <li><strong>ks(x)</strong> - kvadrātsakne no x</li>
-        <li>
-          <strong>rnd(a1, a2)</strong> - nejauši ģenerēts skaitlis robežās [a1;a2]
-        </li>
-      </ul>
       Matemātiskas darbības:
       <ul>
         <li><strong>+</strong> - saskaitīšana</li>
