@@ -129,7 +129,8 @@
         katra izteiksme nosaka krāsas toni, piesātinājumu un spilgtumu. Šīs
         izteiksmes tiek izpildītas katrai lampiņai, katrā animācijas kadrā.
       </p>
-      Pieejami šādi argumenti(mainīgie):
+      <br>
+      Pieejami argumenti:
       <ul>
         <li>
           <strong>x</strong> - lampiņas x koordināta [0;100]
@@ -137,6 +138,7 @@
         <li><strong>y</strong> - lampiņas y koordināta [0;100]</li>
         <li><strong>z</strong> - lampiņas z koordināta [0;100]</li>
       </ul>
+      <br>
       Matemātiskas darbības:
       <ul>
         <li><strong>+</strong> - saskaitīšana</li>
@@ -148,6 +150,7 @@
     </div>
     {#if is_hsv}
       <button on:click={() => (is_hsv = false)}>Pārslēgties RGB sistēmu</button>
+      <br>
       <label>
         H
         <input type="text" bind:value={hsv_fn.h} />
@@ -164,6 +167,7 @@
       <button on:click={() => (is_hsv = true)}
         >Pārslēgties uz HSV sistēmu</button
       >
+      <br>
       <label>
         R
         <input type="text" bind:value={rgb_fn.r} />

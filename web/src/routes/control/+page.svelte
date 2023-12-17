@@ -98,7 +98,7 @@
     <h2 class="text-center">Ātrums</h2>
     <div class="flex flex-col w-48 m-auto">
       <input type="number" bind:value={selection.speed}>
-      <Button on:click={update_on_server}>Atjaunināt</Button>
+      <Button on:click={update_on_server}>Atsvaidzināt</Button>
     </div>
 
 
