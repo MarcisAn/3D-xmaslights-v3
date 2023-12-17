@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 //import {SerialPort} from "serialport"
 import ws from "rpi-ws281x-native";
-const channel = ws(200);
+const channel = ws(200, {stripType: "WS2811_RGB"});
 
 
 let server_url = "wss://lampinas-server.cvgmerch.lv";
