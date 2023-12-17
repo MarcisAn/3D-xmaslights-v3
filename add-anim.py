@@ -13,7 +13,7 @@ CEND = '\033[0m'
 
 template["name"] = input("Animācijas vienkāršais nosaukums(bez atstarpēm, garumzīmēm...): \033[94m")
 print(CEND)
-template["f_name"] = input("Animācijas smukais nosaukums, kas parādīsies kontroles applikācijā: \033[94m")
+template["f_name"] = input("Animācijas publiskais nosaukums, kas parādīsies kontroles applikācijā: \033[94m")
 print(CEND)
 template["speed"] = int(input("Animācijas noklusējuma ātrums: \033[94m"))
 print(CEND)

@@ -86,5 +86,23 @@
             "0;0;0"
         ],
         "params": []
+    },
+    {
+        "name": "stripes",
+        "f_name": "Lejupejo\u0161as str\u012bpas",
+        "speed": 70,
+        "color_names": [
+            "Kr\u0101sa 1",
+            "Kr\u0101sa 2",
+            "Kr\u0101sa 3",
+            "Kr\u0101sa 4"
+        ],
+        "colors": [
+            "255;255;255",
+            "255;255;0",
+            "0;0;255",
+            "0;255;0"
+        ],
+        "params": []
     }
 ]

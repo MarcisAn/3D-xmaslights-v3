@@ -156,6 +156,9 @@ pub fn run_anim(anim_name: String, colors: Vec<String>, cords: Vec<LightCords>) 
     else if (anim_name == "rotating_box_vertical") {
         animations::rotating_box_vertical::rotating_box_vertical(&mut builder, colors, mapped_cords);
     }
+    else if (anim_name == "stripes") {
+            animations::stripes::stripes(&mut builder, colors, mapped_cords);
+        }
     //
     //println!("{:?}", builder.frames);
     //println!("{:?}", builder.get_color(0, 0));
